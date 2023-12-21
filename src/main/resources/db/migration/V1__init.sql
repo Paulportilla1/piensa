@@ -21,3 +21,13 @@ CREATE TABLE IF NOT EXISTS notification (
     progress_id INT NOT NULL,
     FOREIGN KEY (progress_id) REFERENCES progress(id)
     );
+
+CREATE TABLE IF NOT EXISTS multimedia (
+    id SERAIl,
+    id SERIAL PRIMARY KEY,
+    type1 VARCHAR(100) NOT NULL,
+    URL VARCHAR(100) NOT NULL,
+    user1_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user1_id) REFERENCES user1(id)
+    );
