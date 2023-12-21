@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -32,22 +33,22 @@ class NotificationController {
 
     @PutMapping
     fun update (@RequestBody notification: Notification): ResponseEntity<Notification> {
-        return ResponseEntity(NoService.update(client), HttpStatus.OK)
+        return ResponseEntity(NoService.update(notification), HttpStatus.OK)
     }
 
     @PatchMapping
-    fun updateName (@RequestBody client: Client): ResponseEntity<Client> {
-        return ResponseEntity(clientService.updateName(client), HttpStatus.OK)
+    fun updateName (@RequestBody notification: Notification): ResponseEntity<Notification> {
+        return ResponseEntity(notificationService.updateName(notification), HttpStatus.OK)
     }
 
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean? {
-        return clientService.delete(id)
+        return notificationService.delete(id)
     }
 
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): ResponseEntity<*> {
-        return ResponseEntity(clientService.listById (id), HttpStatus.OK)
+        return ResponseEntity(notificationService.listById (id), HttpStatus.OK)
 
     }
 
