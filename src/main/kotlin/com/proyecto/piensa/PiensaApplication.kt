@@ -6,6 +6,3 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class PiensaApplication
 
-fun main(args: Array<String>) {
-	runApplication<PiensaApplication>(*args)
-}

@@ -6,22 +6,6 @@ CREATE TABLE IF NOT EXISTS user1 (
     date1 DATE
     );
 
-CREATE TABLE IF NOT EXISTS multimedia (
-    id SERIAL PRIMARY KEY,
-    type1 VARCHAR(100) NOT NULL,
-    URL VARCHAR(100) NOT NULL,
-    user1_id INT NOT NULL,
-    FOREIGN KEY (user1_id) REFERENCES user1(id)
-    );
-
-CREATE TABLE IF NOT EXISTS game (
-    id SERIAL PRIMARY KEY,
-    name1 VARCHAR(100) NOT NULL,
-    description VARCHAR(100) NOT NULL,
-    user1_id INT NOT NULL,
-    FOREIGN KEY (user1_id) REFERENCES user1(id)
-    );
-
 CREATE TABLE IF NOT EXISTS progress (
     id SERIAL PRIMARY KEY,
     score VARCHAR(100) NOT NULL,
@@ -30,7 +14,7 @@ CREATE TABLE IF NOT EXISTS progress (
     FOREIGN KEY (user1_id) REFERENCES user1(id)
     );
 
-CREATE TABLE IF NOT EXISTS pnotification (
+CREATE TABLE IF NOT EXISTS notification (
     id SERIAL PRIMARY KEY,
     read1 VARCHAR(100) NOT NULL,
     message VARCHAR(100) NOT NULL,
