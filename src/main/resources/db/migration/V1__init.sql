@@ -31,3 +31,4 @@ CREATE TABLE IF NOT EXISTS multimedia (
     PRIMARY KEY (id),
     FOREIGN KEY (user1_id) REFERENCES user1(id)
     );
+
