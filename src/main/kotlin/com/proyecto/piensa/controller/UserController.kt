@@ -2,6 +2,7 @@ package com.proyecto.piensa.controller
 
 import com.proyecto.piensa.model.Notification
 import com.proyecto.piensa.model.User
+import com.proyectoleslie.factura.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
