@@ -1,11 +1,10 @@
 package com.proyecto.piensa.controller
 
-import com.proyecto.piensa.model.Notification
+import com.proyecto.piensa.model.Progress
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -32,23 +31,23 @@ class ProgressController {
     }
 
     @PutMapping
-    fun update (@RequestBody notification: Notification): ResponseEntity<Notification> {
-        return ResponseEntity(NoService.update(notification), HttpStatus.OK)
+    fun update (@RequestBody progress: Progress): ResponseEntity<Progress> {
+        return ResponseEntity(NoService.update(progress), HttpStatus.OK)
     }
 
     @PatchMapping
-    fun updateName (@RequestBody notification: Notification): ResponseEntity<Notification> {
-        return ResponseEntity(notificationService.updateName(notification), HttpStatus.OK)
+    fun updateName (@RequestBody progress: Progress): ResponseEntity<Progress> {
+        return ResponseEntity(progressService.updateName(progress), HttpStatus.OK)
     }
 
     @DeleteMapping("/delete/{id}")
     fun delete (@PathVariable("id") id: Long):Boolean? {
-        return notificationService.delete(id)
+        return progressService.delete(id)
     }
 
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): ResponseEntity<*> {
-        return ResponseEntity(notificationService.listById (id), HttpStatus.OK)
+        return ResponseEntity(progressService.listById (id), HttpStatus.OK)
 
     }
 
