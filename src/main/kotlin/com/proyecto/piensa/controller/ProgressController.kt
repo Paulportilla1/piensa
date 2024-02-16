@@ -1,6 +1,7 @@
 package com.proyecto.piensa.controller
 
 import com.proyecto.piensa.model.Progress
+import com.proyecto.piensa.service.ProgressService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus

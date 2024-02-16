@@ -18,7 +18,7 @@ class UserController {
     lateinit var userService: UserService
 
     @GetMapping
-    fun list (user: User pageable: Pageable):ResponseEntity<*>{
+    fun list (user: User, pageable: Pageable):ResponseEntity<*>{
         val response= userService.list(pageable,user)
         return ResponseEntity(response, HttpStatus.OK)
     }
@@ -35,7 +35,7 @@ class UserController {
 
     @PutMapping
     fun update (@RequestBody user: User): ResponseEntity<User> {
-        return ResponseEntity(NoService.update(user), HttpStatus.OK)
+        return ResponseEntity(userService.update(user), HttpStatus.OK)
     }
 
     @PatchMapping

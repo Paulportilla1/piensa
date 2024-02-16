@@ -1,6 +1,7 @@
 package com.proyecto.piensa.controller
 
 
+import com.proyecto.piensa.service.MultimediaServiceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT, RequestMethod.DELETE])
 class MultimediaController {
     @Autowired
-    lateinit var multimediaService: MultimediaService
+    lateinit var multimediaServiceService: MultimediaServiceService
 
     @GetMapping
     fun list (multimedia: Multimedia, pageable: Pageable):ResponseEntity<*>{
