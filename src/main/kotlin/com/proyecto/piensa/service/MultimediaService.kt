@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException
 
 
 @Service
-class MultimediaServiceService {
+class MultimediaService {
     @Autowired
     lateinit var multimediaRepository: MultimediaRepository
 
